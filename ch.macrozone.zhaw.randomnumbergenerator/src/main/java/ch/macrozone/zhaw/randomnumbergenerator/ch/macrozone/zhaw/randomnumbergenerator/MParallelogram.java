@@ -18,20 +18,9 @@ public class MParallelogram {
 
 	}
 
-	public static void main(String[] args) {
-		BigInteger a = BigInteger.valueOf(12345);
 
-		BigInteger b = BigInteger.valueOf(12345);
-		BigInteger m = BigInteger.valueOf(27182819);
-		BigInteger x0 = BigInteger.valueOf(1111);
-		int n = 128;
-		BigInteger[] X = lcg.computeX(a, b, m, x0, n);
-		BigInteger m_found = crackWithPralellogram(X, 5);
-		System.out.println("m found: " + m_found.toString());
-		System.out.println("m real : " + m.toString());
-	}
 
-	private static BigInteger crackWithPralellogram(BigInteger[] X, int limit) {
+	public static BigInteger findMWithPralellogram(BigInteger[] X, int limit) {
 		Point x0 = new Point(X[0], X[1]);
 
 		BigInteger gcd_of_ms = null;
