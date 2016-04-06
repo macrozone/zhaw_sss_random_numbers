@@ -5,9 +5,9 @@ import java.math.BigInteger;
 public class lcg {
 
 	public static BigInteger[] computeX(BigInteger a, BigInteger b,
-			BigInteger m, BigInteger x0) {
+			BigInteger m, BigInteger x0, int n) {
 
-		int n = 10;
+		
 
 		BigInteger x = x0;
 
@@ -29,7 +29,7 @@ public class lcg {
 		BigInteger m = BigInteger.valueOf(27182819);
 		BigInteger x0 = BigInteger.valueOf(1111);
 
-		BigInteger[] array = computeX(a, b, m, x0);
+		BigInteger[] array = computeX(a, b, m, x0, 128);
 
 		BigInteger a_our = (array[2].subtract(array[1])).multiply(
 				(array[1].subtract(array[0])).modInverse(m)).mod(m);
